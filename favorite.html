@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="mn">
+    <head>
+        <title>Restaurant rating - SignUp to order our products</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Sign up to Restaurant rating websites to order freshly baked products.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            section{
+                width: 67%;
+                margin: auto;
+            }
+            .fav-box{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: #ffffff;
+                padding:10px 30px;
+                margin: 20px 0;
+            }
+            .left{
+                flex: 2;
+                flex-direction: column;
+                margin-left: 20px;
+            }
+            .item1, .item2{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .item1{
+                padding: 10px 0;
+                border-bottom: 1px solid #0D4433;
+            }
+            .item2{
+                padding: 5px 0;
+                
+            }
+            .right{
+                flex: 0.5;
+            }
+            .right img{
+                width: 200px;
+                height: 200px;
+                border-radius: 10px;
+                object-fit: cover;
+                object-position: center;
+            }
+            .minus{
+                border: 1px solid #0D4433;
+                border-radius: 25%;
+                padding: 0px 6px ;
+                cursor: pointer;
+                color: #0D4433;
+                transition: background-color  0.5s ease-in,color  0.5s ease-in;
+            }
+            .minus:hover{
+                border:1px solid #7A4D4A;
+                color: black;
+            }
+            .item1 h3{
+                margin: 0;
+            }
+            .stars{
+                color: var(--color-yellow);
+                width: 100px;
+                height: 30px;
+                cursor: pointer;
+            }
+            p {
+                flex: 1;
+            }
+            @media (max-width: 575.98px) {
+                .right{
+                    aspect-ratio: 3/2;
+                }
+            }
+
+        </style>
+        <script type = "module" src="./index.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="image/logo.png" alt="Your Web App Logo" height="100px"></a>
+            </div>
+            <div class="nav">
+                <a href="#"> Мэдээ</a>
+                <a href="#">Бидний тухай</a>
+            </div>
+            <div class="icons">
+                <div class="search-icon">
+                    <a href="#"><i class="fa fa-search"></i></a>
+                </div>
+                <div class="heart-icon">
+                    <a href="#"><i class="fa fa-heart"></i></a>
+                </div>
+                <div class="account-icon">
+                    <a href="login.html"><i class="fa fa-user"></i></a>
+                </div>
+            </div>
+        </header>
+
+
+        <section class="body-main-section">
+            <h2>Favourites &#10084;</h2>
+            <article class="fav-box">
+                <div class="right">
+                    <img src="image/Cs1.png" alt="" width="150" height="150">
+                </div>
+                <div class="left">
+                    <div class="item1">
+                        <h3>Veranda</h3>
+                        <div class="minus">&minus;</div>
+                    </div>
+                    <div class="item2">
+                        <p>Сайхан хоолны газрууд нь хоолны шилдэг, тансаг байдлын илэрхийлэл юм. Энэхүү байгууллагань өөгүй үйлчилгээ, боловсронгуй орчин, нарийн боловсруулсан цэсээр тодорхойлогддог тансаг хоолныг таньд санал болгоно.</p>
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="fav-box">
+                <div class="right">
+                    <img src="image/Csh2.png" alt="" width="150" height="150">
+                </div>
+                <div class="left">
+                    <div class="item1">
+                        <h3>Rock Salt</h3>
+                        <div class="minus">&minus;</div>
+                    </div>
+                    <div class="item2">
+                        <p>Энгийн зоогийн газрууд нь тайван уур амьсгал, амттай, хүртээмжтэй хоолны хооронд тэнцвэрийг бий болгодог. Эдгээр хоолны газрууд нь найз нөхөд, гэр бүлээрээ хамтдаа хооллох таатай орчинг бүрдүүлдэг.</p>
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                    </div>
+                    
+                </div>
+            </article>
+        </section>
+
+
+        <footer>
+            <div class="footer-container">
+                <!-- Column 1: Social Media Icons and Contact Info -->
+                <div class="footer-column">
+                    <div>
+                        <a href="#" class="footer-icons"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="footer-icons"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="footer-icons"><i class="fa fa-twitter"></i></a>
+                    </div>
+                    <p><i class="fa fa-envelope"></i> Whereeat@gmail.com</p>
+                    <p><i class="fa fa-globe"></i> Монгол Улс, Улаанбаатар хот, ХУД, 18-р хороо, Их Монгол гудамж, Хүннү 2222 хороолол</p>
+                </div>
+    
+                <!-- Column 2: Links -->
+                <div class="footer-column">
+                    <p><a href="#">Түгээмэл асуулт хариулт</a></p>
+                    <p><a href="#">Санал хүсэлт</a></p>
+                    <p><a href="#">Хүний нөөц</a></p>
+                </div>
+    
+                <!-- Column 3: Copyright and Credits -->
+                <div class="footer-column">
+                    <p>&copy; 2023 - БҮХ ЭРХ ХУУЛИАР ХАМГААЛАГДСАН</p>
+                    <p>Вэб сайтыг: МУИС</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
