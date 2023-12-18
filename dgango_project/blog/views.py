@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
-from .models import Review
+from .models import Places
 from django.contrib import messages
 
 posts = [
@@ -36,7 +36,7 @@ def all_user(request):
 
 def home(request):
     context = {
-        'posts': Review.objects.all()
+        'posts': Places.objects.all()
     }
     return render(request, 'blog/home.html', context)
 

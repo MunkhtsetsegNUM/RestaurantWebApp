@@ -15,3 +15,14 @@ class Users(models.Model):
     
 class Person(models.Model):
     first_name = models.CharField(max_length=30)
+    
+class Place(models.Model):
+    pName = models.CharField(max_length = 100)
+    types = models.CharField(max_length = 20)
+    pImage = models.ImageField()
+    rate = models.IntegerField()
+class Places(models.Model):
+    pName = models.CharField(max_length = 100)
+    types = models.CharField(max_length = 20)
+    pImage = models.ImageField()
+    rate = models.IntegerField()
