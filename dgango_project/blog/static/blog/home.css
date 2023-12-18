@@ -4,6 +4,9 @@ ul {
     margin: 0;
     padding: 0;
 }
+a{
+    text-decoration: none;
+}
 
 
 .horizontal-menu {
@@ -89,7 +92,7 @@ ul {
     line-height: normal;
         }
 .stars {
-    color: #ffd700;
+    color: #FFD700;;
     font-size: 20px;
 }     
         

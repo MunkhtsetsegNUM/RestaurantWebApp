@@ -1,5 +1,82 @@
 {% extends "blog/headerfooter.html" %}
 {%block content%}
+<!DOCTYPE html>
+<html lang="mn">
+    <head>
+        <style>
+            section{
+                width: 67%;
+                margin: auto;
+            }
+            .fav-box{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: #ffffff;
+                padding:10px 30px;
+                margin: 20px 0;
+            }
+            .left{
+                flex: 2;
+                flex-direction: column;
+                margin-left: 20px;
+            }
+            .item1, .item2{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .item1{
+                padding: 10px 0;
+                border-bottom: 1px solid #0D4433;
+            }
+            .item2{
+                padding: 5px 0;
+                
+            }
+            .right{
+                flex: 0.5;
+            }
+            .right img{
+                width: 200px;
+                height: 200px;
+                border-radius: 10px;
+                object-fit: cover;
+                object-position: center;
+            }
+            .minus{
+                border: 1px solid #0D4433;
+                border-radius: 25%;
+                padding: 0px 6px ;
+                cursor: pointer;
+                color: #0D4433;
+                transition: background-color  0.5s ease-in,color  0.5s ease-in;
+            }
+            .minus:hover{
+                border:1px solid #7A4D4A;
+                color: black;
+            }
+            .item1 h3{
+                margin: 0;
+            }
+            .stars{
+                color: var(--color-yellow);
+                width: 100px;
+                height: 30px;
+                cursor: pointer;
+            }
+            p {
+                flex: 1;
+            }
+            @media (max-width: 575.98px) {
+                .right{
+                    aspect-ratio: 3/2;
+                }
+            }
+        </style>
+    </head>
+    <body>
         <section class="body-main-section">
             <h2>Favourites &#10084;</h2>
             <article class="fav-box">
@@ -38,33 +115,6 @@
                 </div>
             </article>
         </section>
-
-
-        <footer>
-            <div class="footer-container">
-                <!-- Column 1: Social Media Icons and Contact Info -->
-                <div class="footer-column">
-                    <div>
-                        <a href="#" class="footer-icons"><i class="fa fa-instagram"></i></a>
-                        <a href="#" class="footer-icons"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="footer-icons"><i class="fa fa-twitter"></i></a>
-                    </div>
-                    <p><i class="fa fa-envelope"></i> Whereeat@gmail.com</p>
-                    <p><i class="fa fa-globe"></i> Монгол Улс, Улаанбаатар хот, ХУД, 18-р хороо, Их Монгол гудамж, Хүннү 2222 хороолол</p>
-                </div>
-    
-                <!-- Column 2: Links -->
-                <div class="footer-column">
-                    <p><a href="#">Түгээмэл асуулт хариулт</a></p>
-                    <p><a href="#">Санал хүсэлт</a></p>
-                    <p><a href="#">Хүний нөөц</a></p>
-                </div>
-    
-                <!-- Column 3: Copyright and Credits -->
-                <div class="footer-column">
-                    <p>&copy; 2023 - БҮХ ЭРХ ХУУЛИАР ХАМГААЛАГДСАН</p>
-                    <p>Вэб сайтыг: МУИС</p>
-                </div>
-            </div>
-        </footer>
+    </body>
+    </html>
 {% endblock %}
