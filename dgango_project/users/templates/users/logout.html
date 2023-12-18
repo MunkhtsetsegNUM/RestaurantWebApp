@@ -1,0 +1,29 @@
+
+{% extends "blog/headerfooter.html" %}
+{% load static %}
+{%block content%}
+<!DOCTYPE html>
+<html lang="mn">
+    <head>
+        <style>
+            body{
+
+                
+            }
+            .links{
+                height: 520px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="links">
+            <p>Дахин нэвтрэх үү?</p>
+            <a href="/login">Нэвтрэх</a>
+        </div>
+    </body>
+</html>
+{% endblock %}

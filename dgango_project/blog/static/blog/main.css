@@ -27,6 +27,10 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
+    min-height: 500px;
+}
+main{
+    flex: 1;
 }
 .logo{
     cursor: pointer;
