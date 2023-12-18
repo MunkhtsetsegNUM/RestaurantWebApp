@@ -30,9 +30,15 @@
             <div class="heart-icon">
                 <a href="/favorite"><i class="fa fa-heart"></i></a>
             </div>
-            <div class="account-icon">
-                <a href="/editprofile"><i class="fa fa-user"></i></a>
-            </div>
+            {% if user.is_authenticated %}
+                <div class="account-icon">
+                    <a href="/profile"><i class="fa fa-user"></i></a>
+                </div>
+            {%else%}
+                <div class="account-icon">
+                    <a href="/login"><i class="fa fa-user"></i></a>
+                </div>
+            {% endif %}
         </div>
     </header>
     {%block content%}

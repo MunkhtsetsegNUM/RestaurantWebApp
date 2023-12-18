@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from .models import Review
-from django.http import HttpResponse
+from django.contrib import messages
 
 posts = [
     {
@@ -50,13 +52,8 @@ def editpass(request):
 def editprofile(request):
     return render(request,'blog/editProfile.html')
 
-def login(request):
-    return render(request,'blog/login.html')
 
 def place(request):
     return render(request,'blog/place.html')
-
-def signup(request):
-    return render(request,'blog/signup.html')
 
 # Create your views here.

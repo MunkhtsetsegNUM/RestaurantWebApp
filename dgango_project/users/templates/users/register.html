@@ -1,17 +1,10 @@
 {% extends "blog/headerfooter.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 {%block content%}
 <!DOCTYPE html>
 <html lang="mn">
     <head>
-        <title>Restaurant rating - SignUp to order our products</title>
-        <meta charset="UTF-8">
-        <meta name="description" content="Sign up to Restaurant rating websites to order freshly baked products.">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="style.css">
-
         <style>
             .signup-container {
                 display: flex;
@@ -95,26 +88,41 @@
     <body>
         <div class="signup-container">
             <div class="web-content">
-                <img src="image/lounge1.png" alt="lounge">
+                <img src="{%static 'images/lounge1.png'%}" alt="lounge">
             </div>
         
             <div class="signup-form">
                 <div class="logo">
-                    <img src="image/logo.png" alt="Logo" width="100px" height="100px">
+                    <img src="{%static 'images/logo.png'%}" alt="Logo" width="100px" height="100px">
                 </div>
                 <form method = "POST">
                     {% csrf_token %}
-                    <input type="text" placeholder="Нэвтрэх нэр" required>
-                    <input type="email" placeholder="Майл хаяг" required>
-                    <input type="password" placeholder="Нууц үг үүсгэх" required>
-                    <input type="password" placeholder="Нууц үг давтах" required>
+                    {{form.username}}
+
+                    {{form.email}}
+
+                    {{form.password1}}
+
+                    {{form.password2}}
+                    {% comment %} <input type="text" placeholder="Нэвтрэх нэр" name = "username" required>
+                    <input type="email" placeholder="Майл хаяг" name = "email" required>
+                    <input type="password" placeholder="Нууц үг үүсгэх" name = "password1" required>
+                    <input type="password" placeholder="Нууц үг давтах" name = "password2" required> {% endcomment %}
                     <button class="btn btn-outline-info" type="submit">Бүртгүүлэх</button>
                 </form>
                 <div class="links">
-                    <a href="login.html">Нэвтрэх</a>
+                    <a href="/login">Нэвтрэх</a>
                 </div>
+                {{form.errors}}
             </div>
         </div>
+        <script>
+            var form_field = document.getElementsByTagName('input')
+            form_field[1].placeholder = 'Нэвтрэх нэр';
+            form_field[2].placeholder = 'Майл';
+            form_field[3].placeholder = 'Нууц үг';
+            form_field[4].placeholder = ' Нууц үг давтах';
+        </script>
     </body>
 </html>
 {% endblock %}
