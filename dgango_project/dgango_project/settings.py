@@ -68,7 +68,7 @@ WSGI_APPLICATION = 'dgango_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ResWebAppDB',
+        'NAME': 'WhereEatWebAppDB',
         'USER': 'root',
         'PASSWORD': 'Bibolhuurhun1',
         'PORT': 3306,

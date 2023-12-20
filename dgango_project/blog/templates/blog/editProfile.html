@@ -60,7 +60,10 @@
                 width: 247px;
                 height: 40px;
             }
-            .sign-out a{
+            a {
+                text-decoration: none;
+            }
+            .sign-out {
                 color: var(--color-white);
                 text-decoration: none;
             }
@@ -107,12 +110,12 @@
                 <div class="wrapper-left">
                     <div class="profile-row">
                         <div class="profile-p">
-                            <img src="{{user.profile.image.url}}" alt="Profile" width="170" height="170">
-                            <h3>{{user.username}}</h3>
+                            <img src="image/lounge1.png" alt="Profile" width="170" height="170">
+                            <h3>{{form.username}}</h3>
                         </div>
                         <ul>
                             <li data-li="edit-pro" class="active">
-                                <a href="/editprofile"><p>Профайл засах</p></a>
+                                <p>Профайл засах</p>
                             </li>
                             <li data-li="edit-pro" class="active">
                                 <a href="/editpass"><p>Нууц үг солих</p></a>
@@ -121,23 +124,23 @@
                                 <a href="/favorite"><p>Favorites</p></a>
                             </li>
                         </ul>
-                        <div class="sign-out">
-                            <a href="index.html">Гарах</a>
-                        </div>
+                        <a href="/logout">
+                            <div class="sign-out">
+                            Гарах
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="item address-info">
                     <div class="information">
-                        <h3>Нууц үг солих</h3>
+                        <h3>Профайл засах</h3>
                         <div class="inf-input">
-                            <label for="province">Майл хаяг:</label>
-                                <input type="text" placeholder="Майл хаяг" name="province" id="province" required>
-                            <label for="district">Хуучин нууц үг</label>
-                                <input type="text" placeholder="Хуучин нууц үг" name="oldpassword" id="oldpassword" required>
-                            <label for="number">Шинэ нууц үг</label>
-                                <input type="text" placeholder="Шинэ нууц үг" name="Password" id="password" required>
-                                <label for="number">Шинэ нууц үг давтах</label>
-                                <input type="text" placeholder="Шинэ нууц үг давтах" name="Password" id="password" required>
+                            <label for="province">Нэр:</label>
+                                <input type="text" placeholder="Нэр" name="province" id="province" required>
+                            <label for="district">Овог:</label>
+                                <input type="text" placeholder="Овог" name="district" id="district" required>
+                            <label for="number">Майл:</label>
+                                <input type="text" placeholder="Майл" name="number" id="number" required>
                             <div class="choose">
                                 <div class="save">
                                     <p>Хадгалах</p>
