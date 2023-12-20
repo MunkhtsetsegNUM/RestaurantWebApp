@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
-from .models import Places
-from django.contrib import messages
+from .models import Places, Menu, Review, Users
+from django.contrib.auth.decorators import login_required
+from .forms import ReviewForm
 
 posts = [
     {
@@ -53,7 +52,19 @@ def editprofile(request):
     return render(request,'blog/editProfile.html')
 
 
-def place(request):
-    return render(request,'blog/place.html')
-
-# Create your views here.
+def place(request, pk):
+    place = Places.objects.get(id=pk)
+    menus = place.menus.all() 
+    user = request.session['id']
+    user_detail = Users.objects.get(id=user)
+    if request.method == "POST":
+        star_rating = request.POST.get('rate')
+        item_review = request.POST.get('comment')
+        item_reviews = Review(author = user_detail, place = place, rate = star_rating, comment = item_review)
+        item_review.save()
+    context = {
+        'place': place,
+        'menus': menus,
+        'form': form,
+    }
+    return render(request, 'blog/place.html', context)
