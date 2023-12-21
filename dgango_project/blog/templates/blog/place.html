@@ -95,6 +95,7 @@
         <img src="{{place.pImage}}" alt="restaurant's photo"id="place-img"/>
         <article id="place-info">
           <h1 id="place-name">{{place.pName}}</h1>
+          <!-- Number of rate and comments -->
           <div id="ratings">
             <div class="rating">
               <i class="fa fa-star" style="color: #ffb448"></i>
@@ -105,6 +106,7 @@
               <p>45</p>
             </div>
           </div>
+          <!-- Types of restaurant -->
           <div id="tags">
             <div class="tag">
               <p>restaurant</p>
@@ -116,12 +118,14 @@
               <p>pub</p>
             </div>
           </div>
+          <!-- info place -->
           <p id="info-txt">
             Үндэстний болон тусгай ресторанууд өөрсдийн өвөрмөц хоолны
             өргөлөөрөө дамжуулан алс холын орнуудад хооллодог хүмүүсийг зөөдөг.
             Эдгээр зоогийн газрууд нь тодорхой хоол эсвэл бүс нутгийн хоолонд
             анхаарлаа төвлөрүүлж, тухайн соёлын амтыг жинхэнэ амтаар хангадаг.
           </p>
+          <!-- Review popup -->
           <div id="info-comment">
             <div class="rating">
               <i class="fa fa-heart-o" style="color: #ffb448"></i>
@@ -130,6 +134,7 @@
 
             <div class="info-overlay" id="overlay"></div>
 
+            {% if user.is_authenticated %}
             <div class="popup" id="ratingPopup">
               <form method = "POST">
                 {% csrf_token %}
@@ -153,34 +158,33 @@
                 </div>
               </form>
             </div>
+            {%else%}
+            <div class="popup" id="ratingPopup">
+            <p>Та нэвтэрч орно уу!, <a href="/login">Нэвтрэх</a>.</p>
+          </div>
+            {% endif %}
             </div>
           </div>
         </article>
       </section>
       <section id="comments">
+        <!-- Show place reviews card -->
         {% for review in reviews %}
         <article class="comment">
-          <i class="fa fa-user"></i>
-          <h1>{{ review.author }}</h1>
-          <div class="rating">
-                  <i class="fa fa-star" style="color: #ffb448"></i>
-          </div>
-          <p>{{ review.comment }}</p>
-      </article>
+            <i class="fa fa-user"></i>
+            <h1>{{ review.author.username }}</h1>
+            <div class="rating" style="color: #FFD700; font-size: 15px;">
+              {% for i in star_range %}
+                {% if i < review.rate %}
+                  <span class="star-filled">★</span>
+                {% else %}
+                  <span class="star-empty">☆</span>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <p>{{ review.comment }}</p>
+          </article>
         {% endfor %}
-
-        <article class="comment">
-          <i class="fa fa-user"></i>
-          <h1>Мөнхцэцэг</h1>
-          <div>⭐⭐⭐⭐⭐</div>
-          <p>Харилцааны соёлтой үйлчилгээ сайн газар байсаан хоол нь бас яг зураг шигээ гоё хоолтой.</p>
-        </article>
-        <article class="comment">
-          <i class="fa-solid fa-user"></i>
-          <h1>Мөнхцэцэг</h1>
-          <div>⭐⭐⭐⭐⭐</div>
-          <p>Харилцааны соёлтой үйлчилгээ сайн газар байсаан хоол нь бас яг зураг шигээ гоё хоолтой.</p>
-        </article>
       </section>
       <section id="menu">
         <div id="menu-container">
@@ -211,6 +215,7 @@
       </section>
     </main>
   </body>
+  <!-- Popup script-->
   <script>
     function showRatingPopup() {
       document.getElementById('ratingPopup').style.display = 'block';
@@ -231,6 +236,17 @@
     function rate(rating) {
       console.log('User rated:', rating);
     }
+    document.addEventListener('DOMContentLoaded', function () {
+        var reviewsContainer = document.querySelector('.reviews-container');
+
+        reviewsContainer.addEventListener('mousemove', function (event) {
+            var scrollSpeed = 2; // Adjust this value to control the scrolling speed
+            var direction = (event.clientX > window.innerWidth / 2) ? 1 : -1;
+            
+            reviewsContainer.scrollLeft += direction * scrollSpeed;
+        });
+    });
   </script>
+
 </html>
 {% endblock %}

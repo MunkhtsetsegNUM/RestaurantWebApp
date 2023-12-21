@@ -1,120 +1,123 @@
-{% extends "blog/headerfooter.html" %}
-{%block content%}
+{% extends "blog/headerfooter.html" %} {%block content%}
 <!DOCTYPE html>
 <html lang="mn">
-    <head>
-        <style>
-            section{
-                width: 67%;
-                margin: auto;
-            }
-            .fav-box{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                background-color: #ffffff;
-                padding:10px 30px;
-                margin: 20px 0;
-            }
-            .left{
-                flex: 2;
-                flex-direction: column;
-                margin-left: 20px;
-            }
-            .item1, .item2{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-            }
-            .item1{
-                padding: 10px 0;
-                border-bottom: 1px solid #0D4433;
-            }
-            .item2{
-                padding: 5px 0;
-                
-            }
-            .right{
-                flex: 0.5;
-            }
-            .right img{
-                width: 200px;
-                height: 200px;
-                border-radius: 10px;
-                object-fit: cover;
-                object-position: center;
-            }
-            .minus{
-                border: 1px solid #0D4433;
-                border-radius: 25%;
-                padding: 0px 6px ;
-                cursor: pointer;
-                color: #0D4433;
-                transition: background-color  0.5s ease-in,color  0.5s ease-in;
-            }
-            .minus:hover{
-                border:1px solid #7A4D4A;
-                color: black;
-            }
-            .item1 h3{
-                margin: 0;
-            }
-            .stars{
-                color: var(--color-yellow);
-                width: 100px;
-                height: 30px;
-                cursor: pointer;
-            }
-            p {
-                flex: 1;
-            }
-            @media (max-width: 575.98px) {
-                .right{
-                    aspect-ratio: 3/2;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <section class="body-main-section">
-            <h2>Favourites &#10084;</h2>
-            <article class="fav-box">
-                <div class="right">
-                    <img src="#" alt="" width="150" height="150">
-                </div>
-                <div class="left">
-                    <div class="item1">
-                        <h3>Veranda</h3>
-                        <div class="minus">&minus;</div>
-                    </div>
-                    <div class="item2">
-                        <p>Сайхан хоолны газрууд нь хоолны шилдэг, тансаг байдлын илэрхийлэл юм. Энэхүү байгууллагань өөгүй үйлчилгээ, боловсронгуй орчин, нарийн боловсруулсан цэсээр тодорхойлогддог тансаг хоолныг таньд санал болгоно.</p>
-                        <div class="stars">
-                            ★★★★★
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="fav-box">
-                <div class="right">
-                    <img src="#" alt="" width="150" height="150">
-                </div>
-                <div class="left">
-                    <div class="item1">
-                        <h3>Rock Salt</h3>
-                        <div class="minus">&minus;</div>
-                    </div>
-                    <div class="item2">
-                        <p>Энгийн зоогийн газрууд нь тайван уур амьсгал, амттай, хүртээмжтэй хоолны хооронд тэнцвэрийг бий болгодог. Эдгээр хоолны газрууд нь найз нөхөд, гэр бүлээрээ хамтдаа хооллох таатай орчинг бүрдүүлдэг.</p>
-                        <div class="stars">
-                            ★★★★★
-                        </div>
-                    </div>
-                    
-                </div>
-            </article>
-        </section>
-    </body>
-    </html>
+  <head>
+    <style>
+      section {
+        width: 67%;
+        margin: auto;
+      }
+      .fav-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #ffffff;
+        padding: 10px 30px;
+        margin: 20px 0;
+      }
+      .left {
+        flex: 2;
+        flex-direction: column;
+        margin-left: 20px;
+      }
+      .item1,
+      .item2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .item1 {
+        padding: 10px 0;
+        border-bottom: 1px solid #0d4433;
+      }
+      .item2 {
+        padding: 5px 0;
+      }
+      .right {
+        flex: 0.5;
+      }
+      .right img {
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+      }
+      .minus {
+        border: 1px solid #0d4433;
+        border-radius: 25%;
+        padding: 0px 6px;
+        cursor: pointer;
+        color: #0d4433;
+        transition: background-color 0.5s ease-in, color 0.5s ease-in;
+      }
+      .minus:hover {
+        border: 1px solid #7a4d4a;
+        color: black;
+      }
+      .item1 h3 {
+        margin: 0;
+      }
+      .stars {
+        color: var(--color-yellow);
+        width: 100px;
+        height: 30px;
+        cursor: pointer;
+      }
+      p {
+        flex: 1;
+      }
+      @media (max-width: 575.98px) {
+        .right {
+          aspect-ratio: 3/2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="body-main-section">
+      <h2>Favourites &#10084;</h2>
+      <article class="fav-box">
+        <div class="right">
+          <img src="#" alt="" width="150" height="150" />
+        </div>
+        <div class="left">
+          <div class="item1">
+            <h3>Veranda</h3>
+            <div class="minus">&minus;</div>
+          </div>
+          <div class="item2">
+            <p>
+              Сайхан хоолны газрууд нь хоолны шилдэг, тансаг байдлын илэрхийлэл
+              юм. Энэхүү байгууллагань өөгүй үйлчилгээ, боловсронгуй орчин,
+              нарийн боловсруулсан цэсээр тодорхойлогддог тансаг хоолныг таньд
+              санал болгоно.
+            </p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </article>
+      <article class="fav-box">
+        <div class="right">
+          <img src="#" alt="" width="150" height="150" />
+        </div>
+        <div class="left">
+          <div class="item1">
+            <h3>Rock Salt</h3>
+            <div class="minus">&minus;</div>
+          </div>
+          <div class="item2">
+            <p>
+              Энгийн зоогийн газрууд нь тайван уур амьсгал, амттай, хүртээмжтэй
+              хоолны хооронд тэнцвэрийг бий болгодог. Эдгээр хоолны газрууд нь
+              найз нөхөд, гэр бүлээрээ хамтдаа хооллох таатай орчинг бүрдүүлдэг.
+            </p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </body>
+</html>
 {% endblock %}

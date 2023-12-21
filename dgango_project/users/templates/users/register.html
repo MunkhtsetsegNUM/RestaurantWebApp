@@ -87,6 +87,7 @@
     </head>
     <body>
         <div class="signup-container">
+            <!-- Banner image -->
             <div class="web-content">
                 <img src="{%static 'images/lounge1.png'%}" alt="lounge">
             </div>
@@ -95,14 +96,12 @@
                 <div class="logo">
                     <img src="{%static 'images/logo.png'%}" alt="Logo" width="100px" height="100px">
                 </div>
+                <!-- Sign up form -->
                 <form method = "POST">
                     {% csrf_token %}
                     {{form.username}}
-
                     {{form.email}}
-
                     {{form.password1}}
-
                     {{form.password2}}
                     {% comment %} <input type="text" placeholder="Нэвтрэх нэр" name = "username" required>
                     <input type="email" placeholder="Майл хаяг" name = "email" required>
@@ -110,6 +109,7 @@
                     <input type="password" placeholder="Нууц үг давтах" name = "password2" required> {% endcomment %}
                     <button class="btn btn-outline-info" type="submit">Бүртгүүлэх</button>
                 </form>
+                 <!-- More option -->
                 <div class="links">
                     <a href="/login">Нэвтрэх</a>
                 </div>

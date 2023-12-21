@@ -1,3 +1,6 @@
+# Author: Munkhtsetseg
+# Date: 2023.12.9
+import logging
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
@@ -6,7 +9,10 @@ from django.contrib import messages
 from .forms import UserRegisterForm
 from django.shortcuts import render, redirect
 
-def register(request):
+logger = logging.getLogger(__name__)
+
+""" View for user registration"""
+def register_page(request):
     if request.method == "POST":
         form = UserRegisterForm(request.POST)
         if form.is_valid():
@@ -19,6 +25,10 @@ def register(request):
         
     return render(request,'users/register.html', {'form': form})
 
+def editpass_page(request):
+    return render(request,'users/editPass.html')
+
+"""View for user login"""
 def loginPage(request):
     if request.method == 'POST':
         username = request.POST.get['username']
@@ -32,5 +42,5 @@ def loginPage(request):
             messages.error(request, "Bad")
     return render(request, 'users/login.html')
 
-def profile(request):
+def profile_page(request):
     return render(request, 'users/profile.html')
