@@ -1,3 +1,5 @@
+# Author: Munkhtsetseg
+# Date: 2023.12.5
 from django.db import models
 from django.contrib.auth.models import User
 

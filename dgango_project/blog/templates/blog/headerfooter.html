@@ -1,80 +1,104 @@
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type = "text/css" href="{% static 'blog/main.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'blog/main.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'blog/main.css' %}"
+    />
     {% if title %}
-        <title>Hi</title>
-        {% else %}
-        <title>Where eat</title>
+    <title>Where eat</title>
+    {% else %}
+    <title>Where eat</title>
     {% endif %}
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Header container -->
     <header>
-        <div class="logo">
-            <a href="/"><img src="{%static 'images/logo.png'%}" alt="Your Web App Logo" height="100px"></a>
+      <!-- Header logo -->
+      <div class="logo">
+        <a href="/"
+          ><img
+            src="{%static 'images/logo.png'%}"
+            alt="Your Web App Logo"
+            height="100px"
+        /></a>
+      </div>
+      <!-- Header navbar -->
+      <div class="nav">
+        <a href="#"> Мэдээ</a>
+        <a href="#">Бидний тухай</a>
+      </div>
+      <!-- Header icons -->
+      <div class="icons">
+        <div class="search-icon">
+          <a href="#"><i class="fa fa-search"></i></a>
         </div>
-        <div class="nav">
-            <a href="#"> Мэдээ</a>
-            <a href="#">Бидний тухай</a>
+        <div class="heart-icon">
+          <a href="/favorite"><i class="fa fa-heart"></i></a>
         </div>
-        <div class="icons">
-            <div class="search-icon">
-                <a href="#"><i class="fa fa-search"></i></a>
-            </div>
-            <div class="heart-icon">
-                <a href="/favorite"><i class="fa fa-heart"></i></a>
-            </div>
-            {% if user.is_authenticated %}
-                <div class="account-icon">
-                    <a href="/profile"><i class="fa fa-user"></i></a>
-                </div>
-            {%else%}
-                <div class="account-icon">
-                    <a href="/login"><i class="fa fa-user"></i></a>
-                </div>
-            {% endif %}
+        <!-- Header icons -->
+        {% if user.is_authenticated %}
+        <div class="account-icon">
+          <a href="/profile"><i class="fa fa-user"></i></a>
         </div>
+        {%else%}
+        <div class="account-icon">
+          <a href="/login"><i class="fa fa-user"></i></a>
+        </div>
+        {% endif %}
+      </div>
     </header>
-    {%block content%}
-    {% endblock %}
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    {%block content%} {% endblock %}
+    <!-- footer container -->
     <footer>
-        <div class="footer-container">
-            <!-- Social Media Icons and Contact Info -->
-            <div class="footer-column">
-                <div>
-                    <a href="#" class="footer-icons"><i class="fa fa-instagram"></i></a>
-                    <a href="#" class="footer-icons"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="footer-icons"><i class="fa fa-twitter"></i></a>
-                </div>
-                <p><i class="fa fa-envelope"></i> Whereeat@gmail.com</p>
-                <p><i class="fa fa-globe"></i> Монгол Улс, Улаанбаатар хот, ХУД, 18-р хороо, Их Монгол гудамж, Хүннү 2222 хороолол</p>
-            </div>
-
-            <!-- Links -->
-            <div class="footer-column">
-                <p><a href="#">Түгээмэл асуулт хариулт</a></p>
-                <p><a href="#">Санал хүсэлт</a></p>
-                <p><a href="#">Хүний нөөц</a></p>
-            </div>
-
-            <!-- Copyright and Credits -->
-            <div class="footer-column">
-                <p>&copy; 2023 - БҮХ ЭРХ ХУУЛИАР ХАМГААЛАГДСАН</p>
-                <p>Вэб сайтыг: МУИС</p>
-            </div>
+      <div class="footer-container">
+        <!-- Social Media Icons and Contact Info -->
+        <div class="footer-column">
+          <div>
+            <a href="#" class="footer-icons"><i class="fa fa-instagram"></i></a>
+            <a href="#" class="footer-icons"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="footer-icons"><i class="fa fa-twitter"></i></a>
+          </div>
+          <p><i class="fa fa-envelope"></i> Whereeat@gmail.com</p>
+          <p>
+            <i class="fa fa-globe"></i> Монгол Улс, Улаанбаатар хот, ХУД, 18-р
+            хороо, Их Монгол гудамж, Хүннү 2222 хороолол
+          </p>
         </div>
+
+        <!-- Links -->
+        <div class="footer-column">
+          <p><a href="#">Түгээмэл асуулт хариулт</a></p>
+          <p><a href="#">Санал хүсэлт</a></p>
+          <p><a href="#">Хүний нөөц</a></p>
+        </div>
+
+        <!-- Copyright and Credits -->
+        <div class="footer-column">
+          <p>&copy; 2023 - БҮХ ЭРХ ХУУЛИАР ХАМГААЛАГДСАН</p>
+          <p>Вэб сайтыг: МУИС</p>
+        </div>
+      </div>
     </footer>
-
-
-
-
+  </body>
+</html>

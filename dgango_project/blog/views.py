@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Places, Menu, Review, Users
 from django.contrib.auth.decorators import login_required
 from .forms import ReviewForm
+import logging
 
 posts = [
     {
@@ -33,38 +34,46 @@ posts = [
 def all_user(request):
     return HttpResponse('Returning all user')
 
-def home(request):
+def home_page(request):
+    star_range = range(1, 6)
     context = {
-        'posts': Places.objects.all()
+        'posts': Places.objects.all(),
+        'star_range': star_range
     }
     return render(request, 'blog/home.html', context)
 
 def about(request):
+    try:
+        # Some process
+        logging.info('Successfully completed the process.')
+    except Exception as e:
+        # Handle exceptions
+        logging.error(f'An error occurred: {str(e)}')
     return render(request, 'blog/about.html')
 
-def favorite(request):
+def favorite_page(request):
     return render(request, 'blog/favorite.html')
 
-def editpass(request):
-    return render(request,'blog/editPass.html')
-
-def editprofile(request):
+def editprofile_page(request):
     return render(request,'blog/editProfile.html')
 
-
-def place(request, pk):
+def place_page(request, pk):
     place = Places.objects.get(id=pk)
     menus = place.menus.all() 
-    user = request.session['id']
-    user_detail = Users.objects.get(id=user)
+    user = request.user
+    star_range = range(1, 6)
     if request.method == "POST":
         star_rating = request.POST.get('rate')
         item_review = request.POST.get('comment')
-        item_reviews = Review(author = user_detail, place = place, rate = star_rating, comment = item_review)
-        item_review.save()
+        item_reviews = Review(author = user, place = place, rate = star_rating, comment = item_review)
+        item_reviews.save()
+        
+    reviews = Review.objects.filter(place=place)
+        
     context = {
         'place': place,
         'menus': menus,
-        'form': form,
+        'reviews': reviews,
+        'star_range': star_range
     }
     return render(request, 'blog/place.html', context)

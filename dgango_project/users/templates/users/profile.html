@@ -110,10 +110,12 @@
             <div class="wrapper">
                 <div class="wrapper-left">
                     <div class="profile-row">
+                        <!-- User profile image and name -->
                         <div class="profile-p">
                             <img src="{{user.profile.image.url}}" alt="Profile" width="170" height="170">
                             <h3>{{user.username}}</h3>
                         </div>
+                        <!-- List in profile edit and favorite -->
                         <ul>
                             <li data-li="edit-pro" class="active">
                                 <p>Профайл засах</p>
@@ -125,6 +127,7 @@
                                 <a href="/favorite"><p>Favorites</p></a>
                             </li>
                         </ul>
+                        <!-- Sign out all account -->
                         <a href="/logout">
                             <div class="sign-out">
                             Гарах
@@ -132,6 +135,7 @@
                         </a>
                     </div>
                 </div>
+                <!-- User edit profile -->
                 <div class="item address-info">
                     <div class="information">
                         <h3>Профайл засах</h3>

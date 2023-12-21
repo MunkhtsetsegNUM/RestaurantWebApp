@@ -85,20 +85,22 @@
     </head>
     <body>
         <div class="login-container">
+            <!-- banner image -->
             <div class="web-content">
                 <img src="{% static "images/lounge1.png" %}" alt="lounge">
             </div>
-        
             <div class="login-form">
                 <div class="logo">
                     <img src="{% static "images/logo.png" %}" alt="Logo" width="100px" height="100px">
                 </div>
+                <!-- Login form -->
                 <form method = "POST">
                     {% csrf_token %}
                     {{form.username}}
                     {{form.password}}
                     <button type="submit">Нэвтрэх</button>
                 </form>
+                <!-- More option -->
                 <div class="links">
                     <a href="#">Нууц үг мартсан</a>
                     <a href="/register">Хэрэглэгч үүсгэх</a>
@@ -106,6 +108,7 @@
             </div>
             {{form.errors}}
         </div>
+        <!-- Button text setup -->
         <script>
             var form_field = document.getElementsByTagName('input')
             form_field[1].placeholder = 'Нэвтрэх нэр';

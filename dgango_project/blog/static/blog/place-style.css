@@ -107,15 +107,23 @@ footer a {
 }
 #place-img {
   grid-area: 1/1/2/2;
-  width: 400px;
   border-radius: 20px;
   justify-self: end;
   margin-right: 30px;
 }
+ 
 #place-info {
   display: grid;
   grid-area: 1/2/2/3;
 }
+
+#comments {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
 #ratings {
   display: flex;
   flex-direction: row;
@@ -124,6 +132,7 @@ footer a {
 }
 .rating{
   display: flex;
+  color: #FFD700;
   align-items: center;
   gap: 10px;
 }
@@ -159,7 +168,7 @@ footer a {
   border: none;
 }
 
-#comments {
+.comments {
   display: flex;
   gap: 20px;
   margin: 20px 10px;
